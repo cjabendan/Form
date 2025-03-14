@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 10px 0 20px 0;
+}
+
+.btn {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0);
+}
+
+.btn:hover {
+    background-color: #c2c2c25a; 
+}
+
+.table-container {
+    height: 53vh;    
+    max-height: 53vh;    
+    overflow-y: auto; 
+    border: 1px solid #ddd;
+    border-radius: 8px; 
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+    z-index: 1; 
+}
+
+.table-container::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 10px; 
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.hidden-column {
+    display: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px; 
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+td {
+    color: rgba(242, 242, 242, 0.88);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(242, 242, 242, 0.16); 
+}
+
+th {
+    background-color: #fffdfd;
+}
+
+th:nth-child(5), 
+th:nth-child(6), 
+th:nth-child(7),
+td:nth-child(5), 
+td:nth-child(6)
+{
+    text-align: center;
+}
+
+
+.action-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.action-buttons a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px; 
+    height: 36px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.action-buttons a i {
+    margin: auto;
+}
+
+
+.action-buttons a[href*="/Form/Controller/ViewController.php"],
+.action-buttons a[href*="/Form/Controller/EditController.php"] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.action-buttons a[onclick*="confirmDelete"] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.action-buttons a[href*="/Form/Controller/ViewController.php"]:hover,
+.action-buttons a[href*="/Form/Controller/EditController.php"]:hover {
+    background-color: blue;
+    color: white;
+}
+
+.action-buttons a[onclick*="confirmDelete"]:hover {
+    background-color: red;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
