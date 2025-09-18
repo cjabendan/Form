@@ -1,7 +1,6 @@
 <?php
-include __DIR__ . "/Database/database.php";
-include __DIR__ . "/Model/FormModel.php";
-
+include __DIR__ . "/../Database/database.php";
+include __DIR__ . "/../Model/FormModel.php";
 
 class EditController {
     private $model;

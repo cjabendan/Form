@@ -1,7 +1,8 @@
 <?php
-require_once __DIR__ . "/Model/FormModel.php"; 
-require_once __DIR__ . "/Class/CivilStatus.php";
-require_once __DIR__ . "/Class/Countries.php";
+require_once __DIR__ . "/../Model/FormModel.php"; 
+require_once __DIR__ . "/../Class/CivilStatus.php";
+require_once __DIR__ . "/../Class/Countries.php";
+
 
 class FormController {
     private $model;
@@ -162,7 +163,7 @@ class FormController {
                 if ($success) {
                     unset($_SESSION['form_data']);
                     unset($_SESSION['form_errors']);
-                    header("Location: /Form/View/view.php");
+                    header("Location: /View/view.php");
                     exit();
                 }
             }
