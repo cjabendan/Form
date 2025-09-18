@@ -14,7 +14,7 @@ class ViewControl {
 
     public function handleRequest() {
         if (!isset($_GET['id'])) {
-            header("Location: index.php"); // keep relative paths for portability
+            header("Location: /index.php"); // keep relative paths for portability
             exit();
         }
 
@@ -25,7 +25,7 @@ class ViewControl {
     public function show($id) {
         $formData = $this->model->getFormData($id);
         if (!$formData) {
-            header("Location: index.php");
+            header("Location: /index.php");
             exit();
         }
 
@@ -39,7 +39,7 @@ class ViewControl {
         $_SESSION['age'] = $age;
         $_SESSION['pageTitle'] = $pageTitle;
 
-        header("Location: View/view.php");
+        header("Location: /View/view.php");
         exit();
     }
 }

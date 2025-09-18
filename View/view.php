@@ -3,7 +3,7 @@ session_start();
 require_once __DIR__ . "/../Database/database.php";
 
 if (!isset($_SESSION['formData'])) {
-    header("Location: index.php");
+    header("Location: /index.php");
     exit();
 }
 

@@ -9,7 +9,7 @@ $forms = $model->tableForms();
 if (isset($_GET['delete_id'])) {
     $id = intval($_GET['delete_id']);
     if ($model->delForm($id)) {
-        header("Location: index.php");
+        header("Location: /index.php");
         exit();
     } else {
         die("Error deleting record: " . $conn->error);
