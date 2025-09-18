@@ -11,7 +11,7 @@ class EditController {
 
     public function handleRequest() {
         if (!isset($_GET['id'])) {
-            header("Location: /Form/View/index.php");
+            header("Location: /Form/index.php");
             exit();
         }
 
@@ -23,7 +23,7 @@ class EditController {
         $formData = $this->model->getFormData($id);
 
         if (!$formData) {
-            header("Location: /Form/View/index.php");
+            header("Location: /Form/index.php");
             exit();
         }
 

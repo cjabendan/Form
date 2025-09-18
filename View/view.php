@@ -207,7 +207,7 @@
         </div>
         <br>
         <div class="button-container">
-            <a href="/Form/View/index.php" class="back-btn">Go Back</a>
+            <a href="Form/index.php" class="back-btn">Go Back</a>
         </div>    
     </div>
 </body>

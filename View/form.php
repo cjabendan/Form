@@ -258,7 +258,7 @@
             
             <div class="button-container">
                 <button type="submit" class="submit-btn">Submit Form</button>
-                <a href="/Form/View/index.php" class="back-btn" style="margin-left: 15px;">Cancel</a>
+                <a href="/Form/index.php" class="back-btn" style="margin-left: 15px;">Cancel</a>
             </div>
         </form>
     </div>

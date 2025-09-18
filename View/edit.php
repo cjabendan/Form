@@ -290,7 +290,7 @@
             <div class="line"></div>
             
             <div class="button-container">
-                <button type="submit" class="submit-btn">Save Changes</button><a href="index.php" class="back-btn" style="margin-left: 15px;">Cancel</a>
+                <button type="submit" class="submit-btn">Save Changes</button><a href="/Form/index.php" class="back-btn" style="margin-left: 15px;">Cancel</a>
             </div>
             </div>
         </form>
