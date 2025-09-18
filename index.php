@@ -42,7 +42,7 @@ if (isset($_GET['delete_id'])) {
         <div class="header">
             <h1>All Forms Data</h1>
             <div class="button-container">
-                <a href="/Form/View/form.php" class="btn">Add Form</a>
+                <a href="/View/form.php" class="btn">Add Form</a>
             </div>
         </div>
         <div class="table-container">
