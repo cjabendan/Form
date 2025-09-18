@@ -1,7 +1,7 @@
 <?php
 session_start();
-include __DIR__ . "/Form/Database/database.php";
-include __DIR__ . "/Form/Model/TableModel.php";
+include __DIR__ . "/Database/database.php";
+include __DIR__ . "/Model/TableModel.php";
 
 $model = new TableModel($conn);
 $forms = $model->tableForms();

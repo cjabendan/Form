@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . "/Form/Model/FormModel.php"; 
-require_once __DIR__ . "/Form/Class/CivilStatus.php";
-require_once __DIR__ . "/Form/Class/Countries.php";
+require_once __DIR__ . "/Model/FormModel.php"; 
+require_once __DIR__ . "/Class/CivilStatus.php";
+require_once __DIR__ . "/Class/Countries.php";
 
 class FormController {
     private $model;

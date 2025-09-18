@@ -1,9 +1,9 @@
 <?php   
 session_start();
 
-require_once __DIR__ . "/Form/Controller/FormController.php";
-require_once __DIR__ . "/Form/Model/Session.php";
-require_once __DIR__ . "/Form/Database/database.php";
+require_once __DIR__ . "/Controller/FormController.php";
+require_once __DIR__ . "/Model/Session.php";
+require_once __DIR__ . "/Database/database.php";
 
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']); 
