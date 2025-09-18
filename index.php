@@ -24,13 +24,18 @@ if (isset($_GET['delete_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Form/Styling/style.css">
-    <link rel="stylesheet" href="/Form/Styling/index.css">
+    <link rel="stylesheet" href="/Styling/style.css">
+    <link rel="stylesheet" href="/Styling/index.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>PHP Forms Data</title>
 </head>
 
 <body>
+
+<video autoplay muted loop id="bg-video">
+        <source src="/Files/bgv.mp4" type="video/mp4">
+    </video>
 
 
     <div class="wrapper">
@@ -67,8 +72,8 @@ if (isset($_GET['delete_id'])) {
                             echo "<td>" . $age . "</td>";
                             echo "<td>" . htmlspecialchars($row['sex']) . "</td>";
                             echo "<td class='action-buttons'>";
-                            echo "<a href='/Form/Controller/ViewController.php?id=" . htmlspecialchars($row['id']) . "' title='View Form'><i class='fas fa-eye'></i></a>";
-                            echo "<a href='/Form/Controller/EditController.php?id=" . htmlspecialchars($row['id']) . "' title='Edit Form'><i class='fas fa-edit'></i></a>";
+                            echo "<a href='/Controller/ViewController.php?id=" . htmlspecialchars($row['id']) . "' title='View Form'><i class='fas fa-eye'></i></a>";
+                            echo "<a href='/Controller/EditController.php?id=" . htmlspecialchars($row['id']) . "' title='Edit Form'><i class='fas fa-edit'></i></a>";
                             echo "<a href='javascript:void(0);' onclick='confirmDelete(" . htmlspecialchars($row['id']) . ")' title='Delete Form'><i class='fas fa-trash'></i></a>";
                             echo "</td>";
                             echo "</tr>";

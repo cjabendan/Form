@@ -1,5 +1,5 @@
 <?php
-    include_once $_SERVER['DOCUMENT_ROOT'] . "/Form/Database/database.php"; 
+  include_once __DIR__ . "/../Database/database.php";
 
     class TableModel {
         private $conn;

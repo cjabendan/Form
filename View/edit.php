@@ -45,13 +45,13 @@ $errors = $_SESSION['form_errors'] ?? [];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Form/styling/style.css">
+     <link rel="stylesheet" href="/Styling/style.css">
     <title>PHP Form Validation</title>
 </head>
 <body>
 
     <video autoplay muted loop id="bg-video">
-        <source src="/Form/files/bgv.mp4" type="video/mp4">
+        <source src="/Files/bgv.mp4" type="video/mp4">
     </video>
 
     <div class="wrapper">
@@ -290,7 +290,7 @@ $errors = $_SESSION['form_errors'] ?? [];
             <div class="line"></div>
             
             <div class="button-container">
-                <button type="submit" class="submit-btn">Save Changes</button><a href="/Form/index.php" class="back-btn" style="margin-left: 15px;">Cancel</a>
+                <button type="submit" class="submit-btn">Save Changes</button><a href="/index.php" class="back-btn" style="margin-left: 15px;">Cancel</a>
             </div>
             </div>
         </form>

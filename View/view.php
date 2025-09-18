@@ -24,11 +24,15 @@ function getFormDataValue($field)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Form/Styling/style.css">
+   <link rel="stylesheet" href="/Styling/style.css">
     <title><?php echo $pageTitle; ?></title>
 </head>
 
 <body>
+
+<video autoplay muted loop id="bg-video">
+        <source src="/Files/bgv.mp4" type="video/mp4">
+    </video>
 
 
     <div class="wrapper">
@@ -209,7 +213,7 @@ function getFormDataValue($field)
         </div>
         <br>
         <div class="button-container">
-            <a href="Form/index.php" class="back-btn">Go Back</a>
+            <a href="/index.php" class="back-btn">Go Back</a>
         </div>
     </div>
 </body>
