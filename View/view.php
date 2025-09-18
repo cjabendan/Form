@@ -1,33 +1,35 @@
 <?php
-    session_start();
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/Form/Database/database.php";
+session_start();
+require_once __DIR__ . "/Form/Database/database.php";
 
-    if (!isset($_SESSION['formData'])) {
-        header("Location: index.php");
-        exit();
-    }
-    
-    $formData = $_SESSION['formData'];
-    $age = $_SESSION['age'];
-    $pageTitle = $_SESSION['pageTitle'];
-    
-    function getFormDataValue($field) {
-        return !empty($field) ? htmlspecialchars($field) : "N/A";
-    }
+if (!isset($_SESSION['formData'])) {
+    header("Location: index.php");
+    exit();
+}
+
+$formData = $_SESSION['formData'];
+$age = $_SESSION['age'];
+$pageTitle = $_SESSION['pageTitle'];
+
+function getFormDataValue($field)
+{
+    return !empty($field) ? htmlspecialchars($field) : "N/A";
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Form/Styling/style.css">
     <title><?php echo $pageTitle; ?></title>
 </head>
+
 <body>
-    <video autoplay muted loop id="bg-video">
-        <source src="/Form/files/bgv.mp4" type="video/mp4">
-    </video>
+
 
     <div class="wrapper">
         <h1><?php echo $pageTitle; ?></h1>
@@ -184,7 +186,7 @@
         <div class="form-group">
             <Label>Father's Name:</Label>
             <p>
-                <?php 
+                <?php
                 if (empty($formData['ffn']) && empty($formData['fmn']) && empty($formData['fln'])) {
                     echo "N/A";
                 } else {
@@ -196,9 +198,9 @@
         <div class="form-group">
             <Label>Mother's Maiden Name:</Label>
             <p>
-                <?php 
+                <?php
                 if (empty($formData['mfn']) && empty($formData['mmn']) && empty($formData['mln'])) {
-                    echo "N/A"; 
+                    echo "N/A";
                 } else {
                     echo htmlspecialchars($formData['mfn']) . ' ' . htmlspecialchars($formData['mmn']) . ' ' . htmlspecialchars($formData['mln']);
                 }
@@ -208,7 +210,8 @@
         <br>
         <div class="button-container">
             <a href="Form/index.php" class="back-btn">Go Back</a>
-        </div>    
+        </div>
     </div>
 </body>
+
 </html>

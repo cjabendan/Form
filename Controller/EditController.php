@@ -1,6 +1,7 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/Form/Database/database.php";
-include $_SERVER['DOCUMENT_ROOT'] . "/Form/Model/FormModel.php";
+include __DIR__ . "/Form/Database/database.php";
+include __DIR__ . "/Form/Model/FormModel.php";
+
 
 class EditController {
     private $model;
@@ -11,7 +12,7 @@ class EditController {
 
     public function handleRequest() {
         if (!isset($_GET['id'])) {
-            header("Location: /Form/index.php");
+            header("Location: index.php");
             exit();
         }
 
@@ -23,13 +24,13 @@ class EditController {
         $formData = $this->model->getFormData($id);
 
         if (!$formData) {
-            header("Location: /Form/index.php");
+            header("Location: index.php");
             exit();
         }
 
         session_start();
         $_SESSION['form_data'] = $formData;
-        header("Location: /Form/View/edit.php?id=$id");
+        header("Location: View/edit.php?id=$id");
         exit();
     }
 }

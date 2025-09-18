@@ -1,24 +1,26 @@
 <?php
-    session_start();
-    include $_SERVER['DOCUMENT_ROOT'] . "/Form/Database/database.php";
-    include $_SERVER['DOCUMENT_ROOT'] . "/Form/Model/TableModel.php";
+session_start();
+include __DIR__ . "/Form/Database/database.php";
+include __DIR__ . "/Form/Model/TableModel.php";
 
-    $model = new TableModel($conn);
-    $forms = $model->tableForms();
+$model = new TableModel($conn);
+$forms = $model->tableForms();
 
-    if (isset($_GET['delete_id'])) {
-        $id = intval($_GET['delete_id']);
-        if ($model->delForm($id)) {  
-            header("Location: index.php"); 
-            exit();
-        } else {
-            die("Error deleting record: " . $conn->error);
-        }
+if (isset($_GET['delete_id'])) {
+    $id = intval($_GET['delete_id']);
+    if ($model->delForm($id)) {
+        header("Location: index.php");
+        exit();
+    } else {
+        die("Error deleting record: " . $conn->error);
     }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,9 +31,7 @@
 </head>
 
 <body>
-    <video autoplay muted loop id="bg-video">
-        <source src="/Form/files/bgv.mp4" type="video/mp4">
-    </video>
+
 
     <div class="wrapper">
         <div class="header">
@@ -89,4 +89,5 @@
         }
     </script>
 </body>
+
 </html>

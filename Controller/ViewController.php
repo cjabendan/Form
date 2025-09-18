@@ -1,48 +1,48 @@
 <?php
-    session_start();
-    include $_SERVER['DOCUMENT_ROOT'] . "/Form/Database/database.php";
-    include $_SERVER['DOCUMENT_ROOT'] . "/Form/Model/TableModel.php";
+session_start();
 
-    class ViewControl {
-        private $model;
+include __DIR__ . "/Form/Database/database.php";
+include __DIR__ . "/Form/Model/TableModel.php";
 
-        public function __construct($conn) {
-            $this->model = new TableModel($conn);
-        }
+class ViewControl {
+    private $model;
 
-        public function handleRequest() {
-            if (!isset($_GET['id'])) {
-                header("Location: /Form/index.php");
-                exit();
-            }
-
-            $id = intval($_GET['id']);
-            $this->show($id);
-        }
-
-        public function show($id) {
-            $formData = $this->model->getFormData($id);
-            if (!$formData) {
-                header("Location: /Form/index.php");
-                exit();
-            }
-
-            
-            $dob = new DateTime($formData['dob']);
-            $today = new DateTime();
-            $age = $today->diff($dob)->y;
-
-            $pageTitle = "Form Data";
-
-            $_SESSION['formData'] = $formData;
-            $_SESSION['age'] = $age;
-            $_SESSION['pageTitle'] = $pageTitle;
-
-            header("Location: /Form/View/view.php");
-            exit();
-        }
+    public function __construct($conn) {
+        $this->model = new TableModel($conn);
     }
 
-    $controller = new ViewControl($conn);
-    $controller->handleRequest();
+    public function handleRequest() {
+        if (!isset($_GET['id'])) {
+            header("Location: index.php"); // keep relative paths for portability
+            exit();
+        }
+
+        $id = intval($_GET['id']);
+        $this->show($id);
+    }
+
+    public function show($id) {
+        $formData = $this->model->getFormData($id);
+        if (!$formData) {
+            header("Location: index.php");
+            exit();
+        }
+
+        $dob = new DateTime($formData['dob']);
+        $today = new DateTime();
+        $age = $today->diff($dob)->y;
+
+        $pageTitle = "Form Data";
+
+        $_SESSION['formData'] = $formData;
+        $_SESSION['age'] = $age;
+        $_SESSION['pageTitle'] = $pageTitle;
+
+        header("Location: View/view.php");
+        exit();
+    }
+}
+
+$controller = new ViewControl($conn);
+$controller->handleRequest();
 ?>

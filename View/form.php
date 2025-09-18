@@ -1,16 +1,18 @@
 <?php
-    session_start();
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/Form/Controller/FormController.php";
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/Form/Model/Session.php";
-    require_once $_SERVER['DOCUMENT_ROOT'] . "/Form/Database/database.php";
-    
-    $formController = new FormController($conn);
+session_start();
 
-    $formController->handleRequest();
-    
-    $data = new FormSessionData($_SESSION['form_data'] ?? []);
-    $errors = $_SESSION['form_errors'] ?? [];
+require_once __DIR__ . "/Form/Controller/FormController.php";
+require_once __DIR__ . "/Form/Model/Session.php";
+require_once __DIR__ . "/Form/Database/database.php";
+
+$formController = new FormController($conn);
+
+$formController->handleRequest();
+
+$data = new FormSessionData($_SESSION['form_data'] ?? []);
+$errors = $_SESSION['form_errors'] ?? [];
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +24,7 @@
 </head>
 <body>
 
-    <video autoplay muted loop id="bg-video">
-        <source src="/Form/files/bgv.mp4" type="video/mp4">
-    </video>
+   
 
     <div class="wrapper">
         <h1>PERSONAL DATA</h1>  

@@ -1,44 +1,44 @@
 <?php   
-   session_start();
-   require_once $_SERVER['DOCUMENT_ROOT'] . "/Form/Controller/FormController.php";
-   require_once $_SERVER['DOCUMENT_ROOT'] . "/Form/Model/Session.php";
-   require_once $_SERVER['DOCUMENT_ROOT'] . "/Form/Database/database.php";
+session_start();
 
+require_once __DIR__ . "/Form/Controller/FormController.php";
+require_once __DIR__ . "/Form/Model/Session.php";
+require_once __DIR__ . "/Form/Database/database.php";
 
-    if (isset($_GET['id'])) {
-        $id = intval($_GET['id']); 
-        $sql = "SELECT * FROM formsdata WHERE id = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-    
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();$lastName = $row['ln'];$firstName = $row['fn'];
-            $middleInitial = $row['mn'];$dob = $row['dob'];$sex = $row['sex'];$civilStatus = $row['cv'];
-            $otherCivil = $row['ocv'];$taxIdNumber = $row['tin'];$nationality = $row['nat'];
-            $religion = $row['reg'];$RFUB = $row['rfub'];$HLB = $row['hlb'];$street = $row['strt'];
-            $subdivision = $row['sub'];$BDL = $row['bdl'];$CM = $row['cm'];$province = $row['prov'];
-            $zipcode = $row['zip'];$country = $row['ctry'];$RFUB2 = $row['rfub2'];$HLB2 = $row['hlb2'];
-            $street2 = $row['strt2'];$subdivision2 = $row['sub2'];$BDL2 = $row['bdl2'];$CM2 = $row['cm2'];
-            $province2 = $row['prov2'];$zipcode2 = $row['zip2'];$country2 = $row['ctry2'];$mobileNumber = $row['num'];
-            $email = $row['mail'];$telephoneNumber = $row['tele'];$fatherLastName = $row['fln'];
-            $fatherFirstName = $row['ffn'];$fatherMiddleName = $row['fmn'];$motherLastName = $row['mln'];
-            $motherFirstName = $row['mfn'];$motherMiddleName = $row['mmn'];
-        } else {
-            die("Record not found.");
-        }
-        $stmt->close();
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']); 
+    $sql = "SELECT * FROM formsdata WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $lastName = $row['ln']; $firstName = $row['fn'];
+        $middleInitial = $row['mn']; $dob = $row['dob']; $sex = $row['sex']; $civilStatus = $row['cv'];
+        $otherCivil = $row['ocv']; $taxIdNumber = $row['tin']; $nationality = $row['nat'];
+        $religion = $row['reg']; $RFUB = $row['rfub']; $HLB = $row['hlb']; $street = $row['strt'];
+        $subdivision = $row['sub']; $BDL = $row['bdl']; $CM = $row['cm']; $province = $row['prov'];
+        $zipcode = $row['zip']; $country = $row['ctry']; $RFUB2 = $row['rfub2']; $HLB2 = $row['hlb2'];
+        $street2 = $row['strt2']; $subdivision2 = $row['sub2']; $BDL2 = $row['bdl2']; $CM2 = $row['cm2'];
+        $province2 = $row['prov2']; $zipcode2 = $row['zip2']; $country2 = $row['ctry2']; $mobileNumber = $row['num'];
+        $email = $row['mail']; $telephoneNumber = $row['tele']; $fatherLastName = $row['fln'];
+        $fatherFirstName = $row['ffn']; $fatherMiddleName = $row['fmn']; $motherLastName = $row['mln'];
+        $motherFirstName = $row['mfn']; $motherMiddleName = $row['mmn'];
+    } else {
+        die("Record not found.");
     }
+    $stmt->close();
+}
 
-    $formController = new FormController($conn);
+$formController = new FormController($conn);
+$formController->handleRequest();
 
-   $formController->handleRequest();
-   
-   $data = new FormSessionData($_SESSION['form_data'] ?? []);
-   $errors = $_SESSION['form_errors'] ?? [];
-
+$data = new FormSessionData($_SESSION['form_data'] ?? []);
+$errors = $_SESSION['form_errors'] ?? [];
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

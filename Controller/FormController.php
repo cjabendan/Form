@@ -1,7 +1,7 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . "/Form/Model/FormModel.php"; 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/Form/Class/CivilStatus.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . "/Form/Class/Countries.php";
+require_once __DIR__ . "/Form/Model/FormModel.php"; 
+require_once __DIR__ . "/Form/Class/CivilStatus.php";
+require_once __DIR__ . "/Form/Class/Countries.php";
 
 class FormController {
     private $model;
